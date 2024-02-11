@@ -105,17 +105,6 @@
         </section>
 
     </div>
-    <!-- This is an A11y Change -->
-    <button id="contrast-mode">High Contrast Mode</button>
-    <script>
-        // JavaScript to toggle high contrast mode
-        const tb = document.getElementById('contrast-mode');
-        const body = document.body;
-
-        tb.addEventListener('click', () => {
-            body.classList.toggle('high-contrast');
-        });
-    </script>
 <!--This is a Semantic HTML Change-->
     
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.0/axios.min.js" integrity="sha512-aoTNnqZcT8B4AmeCFmiSnDlc4Nj/KPaZyB5G7JnOnUEkdNpCZs1LCankiYi01sLTyWy+m2P+W4XM+BuQ3Q4/Dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
@@ -203,17 +192,9 @@
     var color = d3.scale.ordinal()
         .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
 
-    // function randomData (){
-    //     var labels = color.domain();
-    //     return labels.map(function(label){
-    //         return { label: label, value: Math.random() }
-    //     });
-    // }
-
 
     function change(data) {
 
-        /* ------- PIE SLICES -------*/
         var slice = svg.select(".slices").selectAll("path.slice")
             .data(pie(data), key);
 
@@ -236,7 +217,6 @@
         slice.exit()
             .remove();
 
-        /* ------- TEXT LABELS -------*/
 
         var text = svg.select(".labels").selectAll("text")
             .data(pie(data), key);
@@ -277,8 +257,6 @@
         text.exit()
             .remove();
 
-        /* ------- SLICE TO TEXT POLYLINES -------*/
-
         var polyline = svg.select(".lines").selectAll("polyline")
             .data(pie(data), key);
         
@@ -306,7 +284,7 @@
     <footer>
         <div class="bottom">
             <div class="center">
-                All rights reserved &copy; Sawani Ingale
+                All rights reserved &copy; ADITI PATIL RAMAN
             </div>
         </div>
     </footer>
